@@ -23,11 +23,11 @@ jobs:
           java-version: 17
           cache: maven
 
-      # Bygg prosjektet – legg til working-directory hvis pom.xml er i underkatalog
       - name: Build with Maven
         run: mvn clean install
-        working-directory: ./spring-boot-ci-demo  # <-- endre denne til mappen der pom.xml faktisk ligger
+        working-directory: demo   # <-- peker til mappen med pom.xml
 
       - name: Run Unit Tests
         run: mvn test
-        working-directory: ./spring-boot-ci-demo  # <-- samme her
+        working-directory: demo   # <-- peker til mappen med pom.xml
+
